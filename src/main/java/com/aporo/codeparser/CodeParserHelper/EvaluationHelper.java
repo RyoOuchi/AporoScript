@@ -7,13 +7,19 @@ public class EvaluationHelper {
         final Map<String, String> variables = context.getAllVariables();
         String actual = variables.get(varName);
         if (actual == null) return false;
-        return switch (operator) {
-            case "==" -> actual.equals(value);
-            case "!=" -> !actual.equals(value);
-            case ">" -> Integer.parseInt(actual) > Integer.parseInt(value);
-            case "<" -> Integer.parseInt(actual) < Integer.parseInt(value);
-            default -> false;
-        };
+        switch (operator) {
+            case "==":
+                return actual.equals(value);
+            case "!=":
+                return !actual.equals(value);
+            case ">":
+                return Integer.parseInt(actual) > Integer.parseInt(value);
+            case "<":
+                return Integer.parseInt(actual) < Integer.parseInt(value);
+            default:
+                return false;
+        }
+
     }
 
     public static String evaluateExpression(CodeParserContext context, String... tokens) {
