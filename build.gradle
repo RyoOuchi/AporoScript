@@ -11,22 +11,12 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-// ✅ これは top-level に書く（build{} の中ではなく）
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src/main/java']
-        }
-    }
-}
-
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = 'com.github.RyoOuchi'
             artifactId = 'AporoScript'
-            version = 'v1.0.5'
+            version = 'v1.0.6'
             from components.java
         }
     }
