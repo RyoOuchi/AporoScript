@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.yourname'
+version = '1.0.0'
+
+java {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+jar {
+    archiveBaseName.set('codeparser')
+    archiveVersion.set('1.0.0')
+}
