@@ -1,16 +1,20 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
-group = 'com.yourname'
-version = '1.0.0'
+group = 'com.github.RyoOuchi'  // Must match your GitHub username
+version = 'v1.0.0'             // Must match your Git tag
 
 java {
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-jar {
-    archiveBaseName.set('codeparser')
-    archiveVersion.set('1.0.0')
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
 }
