@@ -4,19 +4,28 @@ plugins {
 }
 
 group = 'com.github.RyoOuchi'
-version = 'v1.0.5'
+version = 'v1.0.8'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+}
+
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = 'com.github.RyoOuchi'
             artifactId = 'AporoScript'
-            version = 'v1.0.6'
+            version = 'v1.0.8'
             from components.java
         }
     }
