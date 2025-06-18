@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.github.RyoOuchi'  // Must match your GitHub username
-version = 'v1.0.1'             // Must match your Git tag
+version = 'v1.0.2'             // Must match your Git tag
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
