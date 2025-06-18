@@ -14,7 +14,12 @@ java {
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            groupId = 'com.github.RyoOuchi'
+            artifactId = 'AporoScript'
+            version = 'v1.0.4' // 新しくタグを切る
+
             from components.java
         }
     }
 }
+
