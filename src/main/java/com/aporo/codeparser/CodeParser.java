@@ -10,7 +10,7 @@ import java.util.Optional;
 public class CodeParser {
     private final String code;
     private final InstructionRegistry registry = new InstructionRegistry();
-    private final CodeParserContext context = new CodeParserContext();
+    private CodeParserContext context = new CodeParserContext();
 
     public CodeParser(String code) {
         if (code == null) throw new IllegalArgumentException("Code cannot be null");
@@ -26,6 +26,10 @@ public class CodeParser {
         registry.registerInstruction(new SetInstruction("set"));
         registry.registerInstruction(new WhileInstruction("while"));
         registry.registerInstruction(new IfInstruction("if"));
+    }
+
+    public void setContext(CodeParserContext customContext) {
+        this.context = customContext;
     }
 
     public void registerInstruction(Instruction instruction) {
